@@ -4,13 +4,16 @@ import 'package:audioplayers/audio_cache.dart';
 void main() => runApp(XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
-  xylophoneKey(int fileNumber, Color color) {
+  void playSound(int soundNumber) {
+    final player = AudioCache();
+    player.play('note$soundNumber.wav');
+  }
+
+  Expanded xylophoneKey(int soundNumber, Color color) {
     return Expanded(
       child: FlatButton(
-        onPressed: () {
-          final player = AudioCache();
-          player.play('note$fileNumber.wav');
-        },
+        child: null,
+        onPressed: () => playSound(soundNumber),
         padding: EdgeInsets.all(0),
         color: color,
       ),
