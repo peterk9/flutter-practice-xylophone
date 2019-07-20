@@ -12,9 +12,7 @@ class XylophoneApp extends StatelessWidget {
           player.play('note$fileNumber.wav');
         },
         padding: EdgeInsets.all(0),
-        child: Container(
-          color: color,
-        ),
+        color: color,
       ),
     );
   }
@@ -29,6 +27,7 @@ class XylophoneApp extends StatelessWidget {
         body: Scaffold(
           body: Center(
               child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               xylophoneKey(1, Colors.red),
               xylophoneKey(2, Colors.orange),
